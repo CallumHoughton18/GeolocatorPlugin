@@ -119,7 +119,16 @@ namespace Plugin.Geolocator.Abstractions
 			get;
 			set;
 		}
-    }
+
+		/// <summary>
+		/// Gets or sets the correction type
+		/// </summary>
+		public IDictionary<string,string> ExtraValues
+		{
+			get;
+			set;
+		}
+	}
 
     /// <summary>
     /// Position args

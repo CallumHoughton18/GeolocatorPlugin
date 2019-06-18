@@ -70,6 +70,14 @@ namespace Plugin.Geolocator
             if (location.HasSpeed)
                 p.Speed = location.Speed;
 
+			var extrasDic = new Dictionary<string, string>();
+			foreach (var key in location.Extras.KeySet())
+			{
+				var value = location.Extras.Get(key);
+				extrasDic.Add(key, location.Extras.GetString(key));
+			}
+			p.ExtraValues = extrasDic;
+
             p.Longitude = location.Longitude;
             p.Latitude = location.Latitude;
             p.Timestamp = location.GetTimestamp();
